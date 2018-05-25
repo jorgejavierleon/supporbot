@@ -9,11 +9,11 @@ $botman->hears('Hi', function ($bot) {
 $botman->hears('Start conversation', BotManController::class.'@startConversation');
 $botman->hears('.*(comer|menu|hambre).*', BotManController::class.'@startMenuConversation');
 $botman->hears('.*(pollo).*', function ($bot) {
-    $bot->reply('Si nos queda pollo, cuesta 2 lucas!');
+    $bot->reply('Sí nos queda Pollo, cuesta 2.000!');
 });
 $botman->hears('.*(carne).*', function ($bot) {
-    $bot->reply('Si nos queda carne, cuesta 3 lucas!');
+    $bot->reply('Sí nos queda Carne, cuesta 3.500');
 });
-$botman->hears('.*(baratisimo).*', function ($bot) {
-    $bot->reply('Si nos queda baratisimo, cuesta 1.800 !');
+$botman->hears('.*(porotos).*', function ($bot) {
+    $bot->reply('Sí nos queda Porotos, cuestan 1.800 !');
 });

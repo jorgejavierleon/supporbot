@@ -20,19 +20,19 @@ class MenuConversation extends Conversation
             ->fallback('Unable to ask question')
             ->callbackId('ask_order')
             ->addButtons([
-                Button::create('Carne')->value('carne'),
-                Button::create('Pollo')->value('pollo'),
-                Button::create('Baratisimo')->value('baratisimo'),
+                Button::create('Porotos con rienda')->value('porotos'),
+                Button::create('Pollo con papas')->value('pollo'),
+                Button::create('Pastel de carne')->value('carne'),
             ]);
 
         return $this->ask($question, function (Answer $answer) {
             if ($answer->isInteractiveMessageReply()) {
-                if ($answer->getValue() === 'carne') {
-                    $this->say('Perfecto, te guardaremos una carne');
+                if ($answer->getValue() === 'porotos') {
+                    $this->say('Perfecto, te guardaremos unos porotos');
                 } elseif($answer->getValue() === 'pollo') {
-                    $this->say('Perfecto, te guardaremos un pollo');
+                    $this->say('Perfecto, anotado para el Pollo con papas');
                 } else {
-                    $this->say('Perfecto, te guardaremos un baratisimo');
+                    $this->say('Perfecto, te guardaremos un Pastel de carne');
                 }
             }
         });
